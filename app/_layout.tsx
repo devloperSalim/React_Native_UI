@@ -19,10 +19,26 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
+     <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="index" />
+      <Stack.Screen name="page2" />
+      <Stack.Screen name="page3" />
+      <Stack.Screen name="WelcomeScreen" />
+      <Stack.Screen name="SignUpScreen" />
+      <Stack.Screen name="LoginScreen" />
+      <Stack.Screen name="ForgotPasswordScreen" />
+      <Stack.Screen name="ResetPassword" />
+      <Stack.Screen name="GetStart" />
+      <Stack.Screen name="CurrentSituationScreen" />
+      <Stack.Screen name="CountryScreen" />
+      <Stack.Screen name="CurrentFieldScreen" />
+      <Stack.Screen name="GoalSelectionScreen" />
+      <Stack.Screen name="CareerFocusScreen" />
+      <Stack.Screen name="TargetRoleScreen" />
+      <Stack.Screen name="FinalStepScreen" />
+      <Stack.Screen name="GoalTimelineScreen" />
+      <Stack.Screen name="+not-found" />
+    </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
   );
