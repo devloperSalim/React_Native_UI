@@ -17,6 +17,7 @@ import {
   Poppins_700Bold,
 } from '@expo-google-fonts/poppins';
 import AppLoading from 'expo-app-loading';
+import { logoImage } from '../../constants/logo'; 
 
 
 const primaryBlue = '#2957D0';
@@ -44,7 +45,7 @@ export default function ForgotPasswordScreen() {
         {/* Image container */}
         <View style={[styles.imageContainer, styles.spacedItem]}>
           <Image
-            source={require('../../assets/images/app_images/pic_11523815.png')}
+            source={logoImage}
             style={styles.image}
           />
         </View>
@@ -76,7 +77,7 @@ export default function ForgotPasswordScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: '#F7F7F7',
   },
   scrollContent: {
     flexGrow: 1,
@@ -94,15 +95,15 @@ const styles = StyleSheet.create({
     color: primaryBlue,
   },
   imageContainer: {
-    backgroundColor: '#E8E8E8',
+  
     borderRadius: 16,
     padding: 20,
     alignSelf: 'center',
   },
   image: {
-    width: 140,   // bigger width
-    height: 140,  // bigger height
-    tintColor: '#2F66B4',
+    width: 200,   // bigger width
+    height: 200,  // bigger height
+     tintColor: '#4C6FBF',
   },
   label: {
     fontSize: 16,

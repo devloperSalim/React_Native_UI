@@ -19,6 +19,7 @@ import {
   Poppins_500Medium,
 } from '@expo-google-fonts/poppins';
 import AppLoading from 'expo-app-loading';
+import { logoImage } from '../constants/logo'; 
 
 const { height } = Dimensions.get('window');
 
@@ -68,7 +69,7 @@ export default function HomeScreen() {
 
         {/* Image */}
         <Image
-          source={require('../assets/images/app_images/pic_11523815.png')}
+          source={logoImage}
           style={styles.image}
           resizeMode="contain"
         />

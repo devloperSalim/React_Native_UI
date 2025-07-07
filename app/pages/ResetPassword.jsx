@@ -12,6 +12,7 @@ import {
 import { useFonts, Poppins_500Medium, Poppins_700Bold } from '@expo-google-fonts/poppins';
 import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
+import { logoImage } from '../../constants/logo'; 
 
 export default function ResetPassword() {
   const [email, setEmail] = useState('');
@@ -54,7 +55,7 @@ export default function ResetPassword() {
 
         {/* Image below title */}
         <Image
-          source={require('../../assets/images/app_images/pic_11523815.png')}
+          source={logoImage}
           style={styles.image}
         />
 
@@ -102,7 +103,7 @@ export default function ResetPassword() {
 const styles = StyleSheet.create({
   safe: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F7F7F7',
   },
 
   container: {

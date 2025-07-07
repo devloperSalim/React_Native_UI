@@ -16,6 +16,7 @@ import {
 } from '@expo-google-fonts/poppins';
 import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
+import { logoImage } from '../../constants/logo'; 
 
 const { height, width } = Dimensions.get('window');
 
@@ -38,7 +39,7 @@ export default function WelcomeScreen() {
         {/* Image container with text at bottom */}
         <View style={styles.imageContainer}>
           <Image
-            source={require('../../assets/images/app_images/pic_11523815.png')}
+            source={logoImage}
             style={styles.image}
             resizeMode="contain"
           />

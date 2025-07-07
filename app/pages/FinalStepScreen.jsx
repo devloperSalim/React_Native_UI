@@ -19,6 +19,7 @@ import {
   Poppins_700Bold,
 } from '@expo-google-fonts/poppins';
 import AppLoading from 'expo-app-loading';
+import { logoImage } from '../../constants/logo'; 
 
 const { width } = Dimensions.get('window');
 
@@ -72,7 +73,7 @@ export default function FinalStepScreen() {
           {/* Content */}
           <View style={styles.content}>
             <Image
-              source={require('../../assets/images/app_images/pic_11523815.png')}
+              source={logoImage}
               style={styles.image}
               resizeMode="contain"
             />

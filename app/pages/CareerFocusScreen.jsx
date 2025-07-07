@@ -12,6 +12,7 @@ import {
 import { useFonts, Poppins_500Medium, Poppins_700Bold } from '@expo-google-fonts/poppins';
 import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
+import { logoImage } from '../../constants/logo'; 
 
 const { width } = Dimensions.get('window');
 
@@ -65,7 +66,7 @@ export default function CareerFocusScreen() {
     <SafeAreaView style={styles.safe}>
       <View style={styles.container}>
         <Image
-          source={require('../../assets/images/app_images/pic_11523815.png')}
+          source={logoImage}
           style={styles.image}
         />
 

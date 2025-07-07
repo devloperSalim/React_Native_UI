@@ -17,6 +17,7 @@ import {
   Poppins_500Medium,
   Poppins_700Bold,
 } from '@expo-google-fonts/poppins';
+import { logoImage } from '../../constants/logo'; 
 
 const screenWidth = Dimensions.get('window').width;
 const containerWidth = screenWidth > 400 ? 400 : screenWidth - 40;
@@ -47,7 +48,7 @@ export default function SignUpScreen() {
         <Text style={styles.signup}>Sign up</Text>
 
         <Image
-          source={require('../../assets/images/app_images/pic_11523815.png')}
+          source={logoImage}
           style={styles.logo}
         />
 

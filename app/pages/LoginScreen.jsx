@@ -19,6 +19,7 @@ import {
 import AppLoading from 'expo-app-loading';
 
 import { useRouter } from 'expo-router';
+import { logoImage } from '../../constants/logo'; 
 
 const primaryBlue = '#2957D0';
 
@@ -57,7 +58,7 @@ export default function LoginScreen() {
         {/* Logo + Brand */}
         <View style={styles.topSection}>
           <Image
-            source={require('../../assets/images/app_images/pic_11523815.png')}
+            source={logoImage}
             style={styles.logo}
           />
           <Text style={styles.brandText}>Platonis</Text>

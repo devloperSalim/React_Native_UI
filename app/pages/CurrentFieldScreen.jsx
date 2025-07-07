@@ -19,7 +19,7 @@ import {
   Poppins_700Bold,
 } from '@expo-google-fonts/poppins';
 import { useRouter } from 'expo-router';
-
+import { logoImage } from '../../constants/logo'; 
 const { width } = Dimensions.get('window');
 
 // Dot Component
@@ -73,7 +73,7 @@ export default function CurrentFieldScreen() {
           <View style={styles.content}>
             {/* Image */}
             <Image
-              source={require('../../assets/images/app_images/pic_11523815.png')}
+              source={logoImage}
               style={styles.image}
               resizeMode="contain"
             />

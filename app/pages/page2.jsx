@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useFocusEffect } from '@react-navigation/native';
+import { logoImage } from '../../constants/logo'; 
 
 import {
   useFonts,
@@ -66,7 +67,7 @@ export default function Page2() {
 
         {/* Image */}
         <Image
-          source={require('../../assets/images/app_images/pic_11523815.png')}
+          source={logoImage}
           style={styles.image}
           resizeMode="contain"
         />
