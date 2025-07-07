@@ -12,14 +12,16 @@ import { Picker } from '@react-native-picker/picker';
 import { useFonts, Poppins_500Medium, Poppins_700Bold } from '@expo-google-fonts/poppins';
 import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
-import { logoImage } from '../../constants/logo'; // adjust if needed
+import { logoImage } from '../../constants/logo';
+
+const { width } = Dimensions.get('window');
 
 const hobbiesList = [
   'Basketball',
   'Violin',
-  'Reading',
-  'Photography',
-  'Swimming',
+  'Painting',
+  'Coding',
+  'Dancing',
 ];
 
 export default function HobbiesScreen() {
@@ -50,13 +52,13 @@ export default function HobbiesScreen() {
       <View style={styles.inner}>
         <Image source={logoImage} style={styles.image} resizeMode="contain" />
 
+        {/* Title section */}
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Let’s now look at the fun side of!</Text>
-          <Text style={styles.subtitle}>
-            What are your hobbies or extraça-curricular activities?
-          </Text>
+          <Text style={styles.title}>What are your hobbies or extraça-curricular activities?</Text>
         </View>
 
+        {/* Picker */}
         <View style={styles.pickerWrapper}>
           <Picker
             selectedValue={selectedHobby}
@@ -66,16 +68,12 @@ export default function HobbiesScreen() {
             dropdownIconColor="#3f66c9"
           >
             {hobbiesList.map((hobby, i) => (
-              <Picker.Item
-                label={hobby}
-                value={hobby}
-                key={i}
-                color="#3f66c9"
-              />
+              <Picker.Item label={hobby} value={hobby} key={i} color="#3f66c9" />
             ))}
           </Picker>
         </View>
 
+        {/* Selected Tags */}
         <View style={styles.tagsWrapper}>
           {selectedHobbies.map((hobby, i) => (
             <View style={styles.tag} key={i}>
@@ -87,6 +85,7 @@ export default function HobbiesScreen() {
           ))}
         </View>
 
+        {/* Bottom section */}
         <View style={styles.bottom}>
           <View style={styles.dots}>
             {[0, 1, 2, 3, 4].map((i) => (
@@ -96,7 +95,6 @@ export default function HobbiesScreen() {
               />
             ))}
           </View>
-
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Next</Text>
           </TouchableOpacity>
@@ -106,8 +104,6 @@ export default function HobbiesScreen() {
   );
 }
 
-const { width } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -116,77 +112,75 @@ const styles = StyleSheet.create({
   inner: {
     flex: 1,
     paddingHorizontal: 20,
+    justifyContent: 'flex-start',
   },
   image: {
-    width: 150,
-    height: 150,
-    tintColor: '#3f66c9',
+    width: 170,
+    height: 170,
+    tintColor: '#4C6FBF',
     alignSelf: 'center',
     marginTop: 70,
     marginBottom: 0,
   },
   titleContainer: {
     width: '100%',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     marginTop: 30,
-    marginBottom: 30,
+    marginBottom: 40,
   },
   title: {
-    fontFamily: 'Poppins_700Bold',
-    fontSize: 20,
-    color: '#5B5B5B',
-    textAlign: 'center',
-  },
-  subtitle: {
     fontFamily: 'Poppins_500Medium',
-    fontSize: 16,
+    fontSize: 21,
     color: '#5B5B5B',
-    textAlign: 'center',
-    marginTop: 10,
-    lineHeight: 25,
+    textAlign: 'left',
+    lineHeight: 32,
   },
   pickerWrapper: {
     width: '100%',
     backgroundColor: '#fff',
-    borderRadius: 10,
+    borderRadius: 8,
     overflow: 'hidden',
-    marginBottom: 30,
+    borderWidth: 0,
+    marginBottom: 20,
   },
   picker: {
     width: '100%',
     height: 50,
-    fontSize: 20,
-    color: '#3f66c9',
-    fontFamily: 'Poppins_700Bold',
+    fontFamily: 'Poppins_500Medium',
+    fontSize: 21,
+    color: '#5B5B5B',
   },
   pickerItem: {
-    fontSize: 18,
+    fontSize: 10,
     fontFamily: 'Poppins_500Medium',
-    color: '#3f66c9',
+    color: '#5B5B5B',
   },
   tagsWrapper: {
-    marginTop: 10,
+    marginTop: 30,
     flexDirection: 'column',
     alignItems: 'center',
   },
   tag: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#DDE3F0',
-    paddingHorizontal: 25,
-    paddingVertical: 10,
+    justifyContent: 'flex-start',
+    backgroundColor: '#DBDFE4',
+    paddingVertical: 8,
+    paddingHorizontal: 20,
     borderRadius: 30,
-    marginBottom: 15,
+    marginBottom: 20,
+    minWidth: 270,
+    alignSelf: 'center',
+  },
+  remove: {
+    fontSize: 25,
+    color: '#242425',
+    marginRight: 10,
   },
   tagText: {
     fontFamily: 'Poppins_500Medium',
-    color: '#3f66c9',
-    fontSize: 18,
-    marginLeft: 12,
-  },
-  remove: {
-    fontSize: 20,
-    color: '#3f66c9',
+    color: '#5B5B5B',
+    fontSize: 22,
   },
   bottom: {
     position: 'absolute',
@@ -211,14 +205,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#dcdcdc',
   },
   button: {
-    backgroundColor: '#3f66c9',
-    paddingVertical: 14,
-    paddingHorizontal: 60,
+    backgroundColor: '#2E57A4',
+    paddingVertical: 10,
+    paddingHorizontal: 45,
     borderRadius: 12,
   },
   buttonText: {
-    color: '#fff',
-    fontSize: 15,
     fontFamily: 'Poppins_700Bold',
+    color: '#FFFFFE',
+    fontSize: 16,
   },
 });

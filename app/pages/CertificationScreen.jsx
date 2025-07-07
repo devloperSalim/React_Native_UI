@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
   image: {
     width: 170,
     height: 170,
-    tintColor: '#3f66c9',
+    tintColor: '#4C6FBF',
     alignSelf: 'center',
     marginTop: 70,
     marginBottom: 0,
@@ -137,10 +137,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'Poppins_500Medium',
-    fontSize: 22,
+    fontSize: 21,
     color: '#5B5B5B',
     textAlign: 'left',
-    lineHeight: 25,
+    lineHeight: 32,
     marginTop: 50,
   },
   pickerWrapper: {
@@ -153,13 +153,13 @@ const styles = StyleSheet.create({
   picker: {
     width: '100%',
     height: 50,
-  
-    fontSize: 20, // 👈 الخط داخل الـ Picker (العنصر الظاهر)
-    color: '#5B5B5B',
+    // fontWeight:"bold",/
     fontFamily: 'Poppins_500Medium',
+    fontSize: 21,
+    color: '#5B5B5B',
   },
   pickerItem: {
-    fontSize: 10, // 👈 داخل القائمة
+    fontSize: 20, // 👈 داخل القائمة
     fontFamily: 'Poppins_500Medium',
     color: '#5B5B5B',
   },
@@ -171,21 +171,24 @@ const styles = StyleSheet.create({
   tag: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'flex-start',
     backgroundColor: '#DBDFE4',
-    paddingHorizontal: 30,
-    paddingVertical: 10,
+    paddingVertical: 8,
+    paddingHorizontal: 40,
     borderRadius: 30,
     marginBottom: 20,
-  },
-  tagText: {
-    fontFamily: 'Poppins_500Medium',
-    color: '#5B5B5C',
-    fontSize: 20,
-    marginLeft: 15,
+    minWidth: 270,
+    alignSelf: 'center',
   },
   remove: {
     fontSize: 25,
-    color: '#3f66c9',
+    color: '#242425',
+    marginRight: 10,
+  },
+  tagText: {
+    fontFamily: 'Poppins_500Medium',
+    color: '#5B5B5B',
+    fontSize: 22,
   },
   bottom: {
     position: 'absolute',

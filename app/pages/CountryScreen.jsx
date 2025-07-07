@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   buttonText: {
-      fontFamily: 'Poppins_700Bold',
+    fontFamily: 'Poppins_700Bold',
     color: '#FFFFFE',
     fontSize: 16,
   },
