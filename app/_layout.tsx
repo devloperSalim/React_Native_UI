@@ -37,6 +37,8 @@ export default function RootLayout() {
       <Stack.Screen name="TargetRoleScreen" />
       <Stack.Screen name="FinalStepScreen" />
       <Stack.Screen name="GoalTimelineScreen" />
+      <Stack.Screen name="CertificationScreen" />
+      <Stack.Screen name="HobbiesScreen" />
       <Stack.Screen name="+not-found" />
     </Stack>
       <StatusBar style="auto" />

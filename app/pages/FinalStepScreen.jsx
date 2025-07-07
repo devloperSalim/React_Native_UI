@@ -116,8 +116,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 300,
+    height: 300,
     tintColor: '#3f66c9',
     marginBottom: 15,
     marginTop: 40,

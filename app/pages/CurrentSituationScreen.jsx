@@ -12,6 +12,7 @@ import {
 import { useFonts, Poppins_500Medium, Poppins_700Bold } from '@expo-google-fonts/poppins';
 import AppLoading from 'expo-app-loading';
 import { useRouter } from 'expo-router';
+import { logoImage } from '../../constants/logo'; 
 
 const { width } = Dimensions.get('window');
 
@@ -65,7 +66,7 @@ export default function CurrentSituationScreen() {
     <SafeAreaView style={styles.safe}>
       <View style={styles.container}>
         <Image
-          source={require('../../assets/images/app_images/pic_11523815.png')}
+          source={logoImage}
           style={styles.image}
         />
 
@@ -149,18 +150,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   image: {
-    width: 150,
-    height: 150,
+    width: 170,
+    height: 170,
     tintColor: '#3f66c9',
     marginBottom: 15,
-    marginTop: 40,
+    marginTop: 60,
   },
   title: {
     fontFamily: 'Poppins_500Medium',
     fontSize: 17,
     color: '#5E5B5B',
     textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: 50,
   },
   grid: {
     flexDirection: 'row',
@@ -174,7 +175,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 12,
     alignItems: 'center',
-    marginBottom: 15,
+    marginBottom: 30,
     borderWidth: 3,
     borderColor: '#f0f4ff',
   },
@@ -186,7 +187,7 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     tintColor: '#3f66c9',
-    marginBottom: 10,
+    marginBottom: 20,
   },
   cardText: {
     fontFamily: 'Poppins_500Medium',
@@ -198,7 +199,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 1,
   },
   nextButton: {
     backgroundColor: '#2E57A4',
