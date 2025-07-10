@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     fontSize: 26,
-    color: '#3f66c9',
+    color: '#4C6FBF',
     fontFamily: 'Poppins_500Medium',
     marginBottom: 30,
   },
@@ -125,6 +125,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: width,
     height: 55,
-    backgroundColor: '#3f66c9',
+    backgroundColor: '#2E57A4',
   },
 });

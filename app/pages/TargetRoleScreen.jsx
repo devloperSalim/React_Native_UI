@@ -58,7 +58,7 @@ export default function TargetRoleScreen() {
   }
 
   const handleNext = () => {
-    router.push('/pages/CurrentSituationScreen');
+    router.push('/pages/FinalStepScreen');
   };
 
   return (

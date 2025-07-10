@@ -43,6 +43,7 @@ export default function RootLayout() {
       <Stack.Screen name="LoadingRoadmapScreen" />
       <Stack.Screen name="ReadyToDiveScreen" />
       <Stack.Screen name="RoadmapScreen" />
+      <Stack.Screen name="ActivityLockedScreen" />
       <Stack.Screen name="+not-found" />
     </Stack>
       <StatusBar style="auto" />

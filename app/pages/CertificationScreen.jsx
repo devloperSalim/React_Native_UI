@@ -46,6 +46,13 @@ export default function CertificationScreen() {
   const removeCert = (cert) => {
     setSelectedCerts(selectedCerts.filter((c) => c !== cert));
   };
+ const handleNext = () => {
+  if (selectedCerts.length > 0) {
+    router.push('/pages/HobbiesScreen');
+  } else {
+    alert('Please select at least one certification.');
+  }
+};
 
   return (
     <SafeAreaView style={styles.container}>
@@ -102,9 +109,16 @@ export default function CertificationScreen() {
             ))}
           </View>
 
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Next</Text>
-          </TouchableOpacity>
+          <TouchableOpacity
+              style={[
+                styles.button,
+                selectedCerts.length === 0 && styles.disabledButton, // 👈 add disabled style
+              ]}
+              onPress={handleNext}
+              disabled={selectedCerts.length === 0} // 👈 disable when no cert selected
+            >
+              <Text style={styles.buttonText}>Next</Text>
+           </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
@@ -223,4 +237,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: 'Poppins_700Bold',
   },
+  disabledButton: {
+  backgroundColor: '#96ABD1', // gray background when disabled
+},
 });

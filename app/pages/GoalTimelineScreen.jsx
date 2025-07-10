@@ -60,7 +60,7 @@ export default function DeadlineScreen() {
 
   const handleNext = () => {
     if (selectedOption !== null) {
-      router.push('/pages/NextScreen');
+      router.push('/pages/CertificationScreen');
     }
   };
 

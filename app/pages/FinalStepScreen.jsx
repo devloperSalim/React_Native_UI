@@ -57,7 +57,7 @@ export default function FinalStepScreen() {
   }
 
   const handleNext = () => {
-    router.push('/pages/FinishScreen');
+    router.push('/pages/GoalTimelineScreen');
   };
 
   return (
