@@ -44,6 +44,12 @@ export default function RootLayout() {
       <Stack.Screen name="ReadyToDiveScreen" />
       <Stack.Screen name="RoadmapScreen" />
       <Stack.Screen name="ActivityLockedScreen" />
+      <Stack.Screen name="CourseSkillsScreen" />
+      <Stack.Screen name="CourseInteractiveScenarioScreen" />  
+      <Stack.Screen name="KnowledgeCheckIntroScreen" />
+      <Stack.Screen name="KnowledgeCheckQuestionScreen" />
+      <Stack.Screen name="KnowledgeCheckFeedbackScreen" />
+      <Stack.Screen name="KnowledgeCheckFinalReviewScreen" />
       <Stack.Screen name="+not-found" />
     </Stack>
       <StatusBar style="auto" />
