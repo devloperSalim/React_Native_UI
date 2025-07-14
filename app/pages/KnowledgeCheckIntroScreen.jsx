@@ -9,9 +9,15 @@ import {
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
+import { useFonts, Poppins_500Medium, Poppins_700Bold } from '@expo-google-fonts/poppins';
+
 
 export default function KnowledgeCheckIntroScreen() {
   const router = useRouter();
+    let [fontsLoaded] = useFonts({
+            Poppins_500Medium,
+            Poppins_700Bold,
+          });
 
   const handleBack = () => router.back();
   const handleNext = () => router.push('/KnowledgeCheckQuestionsScreen'); // adjust as needed
@@ -23,7 +29,7 @@ export default function KnowledgeCheckIntroScreen() {
         <Text style={styles.headerText}>
           Hello <Text style={styles.boldText}>Roberto</Text>
         </Text>
-        <FontAwesome name="bars" size={24} color="#222" />
+        <FontAwesome name="bars" size={40} color="#222" />
       </View>
 
       {/* Content */}
@@ -69,15 +75,17 @@ export default function KnowledgeCheckIntroScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F7F7F7' },
   header: {
-    height: 60,
-    paddingHorizontal: 20,
-    flexDirection: 'row',
+     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 10,
+    backgroundColor: '#F7F7F7',
+    marginBottom: 35
   },
   headerText: {
-    fontSize: 18,
-    color: '#444',
+    fontSize: 28,
+    color: '#5B5B5B',
     fontFamily: 'Poppins_500Medium',
   },
   boldText: { fontWeight: 'bold' },
@@ -86,26 +94,26 @@ const styles = StyleSheet.create({
     paddingBottom: 100,
   },
   activityTitle: {
-    fontSize: 18,
+    fontSize: 24,
     fontFamily: 'Poppins_700Bold',
     marginTop: 15,
     marginBottom: 5,
-    color: '#2E57A4',
+    color: '#5B5B5B',
   },
   courseTitle: {
-    fontSize: 16,
+    fontSize: 20,
     fontFamily: 'Poppins_500Medium',
     color: '#333',
-    marginBottom: 20,
+    marginBottom: 30,
   },
   infoText: {
-    fontSize: 14,
+    fontSize: 18,
     fontFamily: 'Poppins_500Medium',
     color: '#333',
     marginBottom: 4,
   },
   description: {
-    fontSize: 14,
+    fontSize: 16,
     fontFamily: 'Poppins_500Medium',
     color: '#555',
     marginVertical: 15,
@@ -114,10 +122,10 @@ const styles = StyleSheet.create({
     marginBottom: 25,
   },
   topic: {
-    fontSize: 14,
+    fontSize: 16,
     fontFamily: 'Poppins_500Medium',
     color: '#333',
-    marginBottom: 5,
+    marginBottom: 10,
   },
   goButton: {
     backgroundColor: '#2E57A4',
@@ -128,7 +136,7 @@ const styles = StyleSheet.create({
   },
   goButtonText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 18,
     fontFamily: 'Poppins_700Bold',
   },
   footer: {

@@ -9,14 +9,19 @@ import {
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
+import { useFonts, Poppins_500Medium, Poppins_700Bold } from '@expo-google-fonts/poppins';
 
 export default function KnowledgeCheckQuestionScreen() {
   const router = useRouter();
+  const [fontsLoaded] = useFonts({
+    Poppins_500Medium,
+    Poppins_700Bold,
+  });
+
   const [selected, setSelected] = useState(null);
   const [submitted, setSubmitted] = useState(false);
 
   const correctAnswer = 'Rabat';
-
   const answers = ['Rabat', 'Casablanca', 'Tokyo', 'Taroudant'];
 
   const handleSubmit = () => {
@@ -30,7 +35,7 @@ export default function KnowledgeCheckQuestionScreen() {
   };
 
   const handleNext = () => {
-    router.push('/NextScreen'); // Change this route as needed
+    router.push('/NextScreen'); // Adjust this path
   };
 
   return (
@@ -40,10 +45,10 @@ export default function KnowledgeCheckQuestionScreen() {
         <Text style={styles.headerText}>
           Hello <Text style={styles.bold}>Roberto</Text>
         </Text>
-        <FontAwesome name="bars" size={24} color="#333" />
+        <FontAwesome name="bars" size={30} color="#333" />
       </View>
 
-      {/* Scrollable content */}
+      {/* Content */}
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.activity}>Activity 1</Text>
         <Text style={styles.title}>Knowledge Check</Text>
@@ -74,22 +79,32 @@ export default function KnowledgeCheckQuestionScreen() {
           </TouchableOpacity>
         ))}
 
-        {/* Submit Button */}
-        {!submitted && (
-          <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
-            <Text style={styles.submitButtonText}>Submit</Text>
-          </TouchableOpacity>
-        )}
+        {/* Submit button */}
+        <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
+          <Text style={styles.submitButtonText}>Submit</Text>
+        </TouchableOpacity>
 
-        {/* Feedback below Submit */}
+        {/* Feedback appears BELOW the button */}
         {submitted && (
-          <View style={styles.feedback}>
-            <Text style={styles.correctText}>That’s correct !</Text>
+          <View
+            style={[
+              styles.feedback,
+              {
+                backgroundColor:
+                  selected === correctAnswer ? '#28a745' : '#ff4d4d',
+              },
+            ]}
+          >
+            <Text style={styles.feedbackText}>
+              {selected === correctAnswer
+                ? "That's correct!"
+                : "That's incorrect!"}
+            </Text>
           </View>
         )}
       </ScrollView>
 
-      {/* Fixed Footer */}
+      {/* Footer */}
       <View style={styles.footer}>
         <TouchableOpacity onPress={handleBack}>
           <FontAwesome name="arrow-left" size={22} color="#fff" />
@@ -103,20 +118,19 @@ export default function KnowledgeCheckQuestionScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F8F8F8',
-  },
+  container: { flex: 1, backgroundColor: '#F8F8F8' },
   header: {
-    height: 60,
-    paddingHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 10,
+    backgroundColor: '#F7F7F7',
+    marginBottom: 30,
   },
   headerText: {
-    fontSize: 18,
-    color: '#444',
+    fontSize: 24,
+    color: '#5B5B5B',
     fontFamily: 'Poppins_500Medium',
   },
   bold: {
@@ -124,27 +138,27 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 20,
-    paddingBottom: 100,
+    paddingBottom: 130,
   },
   activity: {
-    fontSize: 16,
+    fontSize: 22,
     fontFamily: 'Poppins_700Bold',
-    color: '#2E57A4',
+    color: '#5B5B5B',
     marginBottom: 5,
   },
   title: {
-    fontSize: 16,
+    fontSize: 20,
     fontFamily: 'Poppins_500Medium',
-    marginBottom: 20,
+    marginBottom: 25,
   },
   question: {
-    fontSize: 15,
+    fontSize: 20,
     fontFamily: 'Poppins_700Bold',
     marginBottom: 6,
     color: '#333',
   },
   questionText: {
-    fontSize: 14,
+    fontSize: 20,
     fontFamily: 'Poppins_500Medium',
     marginBottom: 20,
     color: '#333',
@@ -152,19 +166,20 @@ const styles = StyleSheet.create({
   answerRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 12,
   },
   answerText: {
     fontSize: 14,
     fontFamily: 'Poppins_500Medium',
     color: '#333',
+    
   },
   submitButton: {
     backgroundColor: '#2E57A4',
     paddingVertical: 10,
     borderRadius: 14,
-    marginTop: 20,
     alignItems: 'center',
+    marginTop: 60,
   },
   submitButtonText: {
     color: '#fff',
@@ -172,13 +187,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   feedback: {
-    marginTop: 15,
-    backgroundColor: '#28a745',
+    marginTop: 30,
     padding: 12,
     borderRadius: 14,
     alignItems: 'center',
   },
-  correctText: {
+  feedbackText: {
     color: '#fff',
     fontFamily: 'Poppins_700Bold',
     fontSize: 16,
